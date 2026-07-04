@@ -1,4 +1,0 @@
-# Comma-separated list of origins the CORS middleware should allow.
-# In production this should be your Vercel frontend URL.
-# In local development, the defaults in main.py already cover localhost:5173.
-ALLOWED_ORIGINS=https://soumya-protocol.vercel.app,http://localhost:5173
