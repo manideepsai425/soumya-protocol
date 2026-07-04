@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color: warm sunset-to-blossom palette — vibrant and glowing, deliberately
+     kept warm rather than the cool cyan/magenta-on-black of cyberpunk/neon. */
+  --color-ink: #3b0b2e;
+  --color-coral: #ff6f59;
+  --color-marigold: #ffc857;
+  --color-blossom: #ff5da2;
+  --color-lilac: #9d7bff;
+  --color-cream: #fff6ec;
+
+  /* Type: a characterful rounded display face paired with a calmer body
+     face, plus a monospace face used only for the "system/protocol" voice
+     that nods to this page's origin as a terminal script. */
+  --font-display: "Fredoka", "Baloo 2", sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  --animate-drift: drift 18s ease-in-out infinite;
+  --animate-float-heart: float-heart 4s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.6s ease forwards;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float-heart {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.04);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-marigold);
+  outline-offset: 2px;
+}
